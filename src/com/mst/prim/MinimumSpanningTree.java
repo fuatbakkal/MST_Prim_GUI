@@ -50,11 +50,27 @@ public class MinimumSpanningTree extends JComponent {
         int kx = 56;
         int ky = 34;
 
+        int weight, totalWeight = 0;
+
+        g2d.setFont(new Font("default", Font.BOLD, 12));
+        g2d.setColor(new Color(0, 0, 255));
+        g2d.drawString("Source Destination Weight", 1120, 20);
+
         for (int i = 1; i < node.size(); i++) {
+            weight = kM.getMatrix()[kaynak[i]][i];
+            totalWeight += weight;
+
             int x1 = (k + node.get(kaynak[i]).getX()) * kx - 30;
             int y1 = (k + node.get(kaynak[i]).getY()) * ky - 20;
             int x2 = (k + node.get(i).getX()) * kx - 30;
             int y2 = (k + node.get(i).getY()) * ky - 20;
+
+
+            g2d.setFont(new Font("default", Font.BOLD, 13));
+            g2d.setColor(new Color(0, 0, 0));
+            g2d.drawString(Integer.toString(node.get(kaynak[i]).getId()), 1140, 20*(i+1));
+            g2d.drawString(Integer.toString(node.get(i).getId()), 1205, 20*(i+1));
+            g2d.drawString(Integer.toString(weight), 1263, 20*(i+1));
 
             // Yolları çiz
             g2d.setColor(new Color(0, 128, 0));
@@ -93,5 +109,8 @@ public class MinimumSpanningTree extends JComponent {
                         x1 > x2 ? x2 + (x1 - x2) / 2 + 20 : x1 + (x2 - x1) / 2 + 17,
                         y1 > y2 ? y2 + (y1 - y2) / 2 : y1 + (y2 - y1) / 2 + 20);
         }
+
+        g2d.setColor(new Color(0, 0, 255));
+        g2d.drawString("Total Weight: " + totalWeight, 1120, 650);
     }
 }

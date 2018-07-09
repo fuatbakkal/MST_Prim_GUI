@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MST_Prim.iml" filepath="$PROJECT_DIR$/MST_Prim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MST_Prim_GUI.iml" filepath="$PROJECT_DIR$/MST_Prim_GUI.iml" />
     </modules>
   </component>
 </project>

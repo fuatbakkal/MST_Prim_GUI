@@ -83,9 +83,10 @@ public class PrimsAlgorithm {
     }
 
     public final void minimumSpanningTree(List<Node> node) {
-        System.out.println(" Source -> Destination : Weight");
+        System.out.println("Source Destination Weight");
         for (int i = 1; i < numberOfNodes; i++) {
-            System.out.println(node.get(source[i]).getId() + "\t:\t" + node.get(i).getId() + "\t=\t" + matrix.getMatrix()[source[i]][i]);
+            System.out.format("%6d %11d %6d\n", node.get(source[i]).getId(), node.get(i).getId(), matrix.getMatrix()[source[i]][i]);
+            //System.out.println( + "\t:\t" +  + "\t=\t" + );
         }
     }
 }

@@ -21,19 +21,15 @@ public final class AdjacencyMatrix {
         return adjacencyMatrix;
     }
 
-    // FIXME: 10.06.2016 : Row numbers are not properly shown
     public String toString() {
-        String output = "    ";
+        String output = "\n";
 
-        for (Node nodes : node) {
-            output += String.format("%3d ", nodes.getId());
-        }
-
-        output += "\n";
-
+        System.out.print(" \\ ");
         for (int i = 0; i < node.size(); i++) {
             System.out.format("%3d ", node.get(i).getId());
+            output += String.format("%3d",node.get(i).getId());
             for (int j = 0; j < node.size(); j++) {
+
                 output += String.format("%3d ", adjacencyMatrix[i][j]);
             }
             output += "\n";

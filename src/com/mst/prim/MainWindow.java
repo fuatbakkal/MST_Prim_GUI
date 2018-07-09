@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
@@ -48,6 +49,7 @@ public class MainWindow {
 
     private final ActionListener showMstEvent = (ActionEvent e) -> {
         AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(node);
+        System.out.println("\nAdjacency Matrix");
         System.out.println(adjacencyMatrix.toString());
 
         PrimsAlgorithm prim = new PrimsAlgorithm(node, adjacencyMatrix);
